@@ -1,0 +1,20 @@
+{
+    "mappings": [
+       {"resources": ["finance"],
+        "verbs": ["get", "list"],
+        "permission": "finance.read"},
+       {"resources": ["IT","SUPPORT"],
+        "verbs": ["*"],
+        "permission": "IT.access"}],
+    "policies": [
+        {"permissions": ["finance.read", "IT.access"],
+         "members": [
+           {"kind": "User",
+	    "name": "alice@example.com"},
+	   {"kind": "ServiceAccount",
+	    "name": "admin@appspot.gserviceaccount.com"}]},
+ 	{"permissions": ["finance.read"],
+         "members": [
+           {"kind": "Group",
+            "name": "frontend-admins"}]}]}
+
